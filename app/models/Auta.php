@@ -56,15 +56,6 @@ class Product
         $this->table=$table;
     }
 
-    public function setConnectionString()
-    {
-        $this->connectionString = mysqli_connect($this->serverName, $this->userName, $this->passCode, $this->dbName);
-        if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error();
-            exit();
-        }
-    }
-
     public function setMaxSpeed(string $max_speed)
     {
         $this->max_speed = $max_speed;
@@ -84,15 +75,17 @@ class Product
         $this->cena= $cena;
     }
 
-    // CRUD OPERATIONS
     public function create(array $data)
     {
 
     }
 
-    public function read(int $id)
+    public function read(int $id, string $connectionString)
     {
-
+        $string="SELECT * FROM ".$this->table;
+        if ($result = mysqli_query($connectionString, $string)) {
+            return json_encode($result);
+        }
     }
 
     public function update(int $id, array $data)
