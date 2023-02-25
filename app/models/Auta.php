@@ -1,7 +1,8 @@
 <?php 
 namespace App\Models;
+include_once 'autoloader/autoloader.php';
 
-class Product
+class Auta
 {
     protected $id;
     protected $nazwa;
@@ -80,12 +81,14 @@ class Product
 
     }
 
-    public function read(int $id, string $connectionString)
+    public function read(int $id, $dbh)
     {
-        $string="SELECT * FROM ".$this->table;
-        if ($result = mysqli_query($connectionString, $string)) {
-            return json_encode($result);
+        $data=array();
+        foreach($dbh->query('SELECT * from auta WHERE id ='.$id) as $row) {
+            array_push($data, $row);
         }
+        $json=json_encode($data);
+        print_r($json);
     }
 
     public function update(int $id, array $data)
@@ -93,8 +96,8 @@ class Product
 
     }
 
-    public function delete(int $id)
+    public function delete(int $id, $dbh)
     {
-
+        $dbh->query('DELETE FROM auta WHERE id ='.$id);
     }
 }

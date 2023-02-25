@@ -1,8 +1,8 @@
 <?php
 
-namespace projekt\classes;
+namespace Autoloader\Autoloader;
 
-spl_autoload_register('projekt\classes\myautoLoader');
+spl_autoload_register('Autoloader\Autoloader\myautoLoader');
 function myautoLoader($className)
 {
     $url=$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
@@ -12,7 +12,7 @@ function myautoLoader($className)
         $path="";
     }
     $extension=".php";
-    $fullpath=$path . $className . $extension;
+    $fullpath=$path.$className.$extension;
     $fullpath_slash=str_replace("\\", "/", $fullpath);
     $fullpath_prefix=str_replace("PHPCRUD/", "", $fullpath_slash);
     include_once $fullpath_prefix;
