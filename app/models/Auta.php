@@ -76,9 +76,9 @@ class Auta
         $this->cena= $cena;
     }
 
-    public function create(array $data)
+    public function create(array $data, $dbh)
     {
-
+        $dbh->query('INSERT INTO auta (nazwa, max_speed, silnik, masa, cena) VALUES ("'.$data['name'].'","'.$data['max_speed'].'","'.$data['engine'].'","'.$data['mass'].'","'.$data['price'].'")');
     }
 
     public function read(int $id, $dbh)
@@ -88,12 +88,12 @@ class Auta
             array_push($data, $row);
         }
         $json=json_encode($data);
-        print_r($json);
+        return ($json);
     }
 
-    public function update(int $id, array $data)
+    public function update(int $id, array $data, $dbh)
     {
-
+        $dbh->query('UPDATE auta SET nazwa="'.$data["name"].'",max_speed="'.$data["max_speed"].'",silnik="'.$data["engine"].'",masa="'.$data["mass"].'",cena="'.$data["price"].'" WHERE id ='.$id);
     }
 
     public function delete(int $id, $dbh)

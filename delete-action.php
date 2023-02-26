@@ -1,5 +1,4 @@
 <?php 
-namespace App\Action;
 include_once 'autoloader/autoloader.php';
 use App\Models\Auta;
 use App\Controllers\CarsController;

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.font-weight-bold{
+    font-weight: bold;
+    font-size:30px;
+}
+.checker{
+    display:none;
+    width:20%;
+    float:right;
+    line-height: 80%;
+    font-size:15px;   
+}
+small{
+    font-size:5;
+}
+.bg-secondary{
+    background-color:rgb(168, 183, 196) !important;
+}
