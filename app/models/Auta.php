@@ -1,5 +1,6 @@
-<?php 
+<?php
 namespace App\Models;
+
 include_once 'autoloader/autoloader.php';
 
 class Auta
@@ -54,7 +55,7 @@ class Auta
 
     public function setTable($table)
     {
-        $this->table=$table;
+        $this->table = $table;
     }
 
     public function setMaxSpeed(string $max_speed)
@@ -64,40 +65,40 @@ class Auta
 
     public function setSilnik(string $silnik)
     {
-        $this->silnik= $silnik;
+        $this->silnik = $silnik;
     }
 
     public function setMasa(string $masa)
     {
-        $this->masa= $masa;
+        $this->masa = $masa;
     }
     public function setCena(string $cena)
     {
-        $this->cena= $cena;
+        $this->cena = $cena;
     }
 
     public function create(array $data, $dbh)
     {
-        $dbh->query('INSERT INTO auta (nazwa, max_speed, silnik, masa, cena) VALUES ("'.$data['name'].'","'.$data['max_speed'].'","'.$data['engine'].'","'.$data['mass'].'","'.$data['price'].'")');
+        $dbh->query('INSERT INTO auta (nazwa, max_speed, silnik, masa, cena) VALUES ("' . $data['name'] . '","' . $data['max_speed'] . '","' . $data['engine'] . '","' . $data['mass'] . '","' . $data['price'] . '")');
     }
 
     public function read(int $id, $dbh)
     {
-        $data=array();
-        foreach($dbh->query('SELECT * from auta WHERE id ='.$id) as $row) {
+        $data = array();
+        foreach ($dbh->query('SELECT * from auta WHERE id =' . $id) as $row) {
             array_push($data, $row);
         }
-        $json=json_encode($data);
+        $json = json_encode($data);
         return ($json);
     }
 
     public function update(int $id, array $data, $dbh)
     {
-        $dbh->query('UPDATE auta SET nazwa="'.$data["name"].'",max_speed="'.$data["max_speed"].'",silnik="'.$data["engine"].'",masa="'.$data["mass"].'",cena="'.$data["price"].'" WHERE id ='.$id);
+        $dbh->query('UPDATE auta SET nazwa="' . $data["name"] . '",max_speed="' . $data["max_speed"] . '",silnik="' . $data["engine"] . '",masa="' . $data["mass"] . '",cena="' . $data["price"] . '" WHERE id =' . $id);
     }
 
     public function delete(int $id, $dbh)
     {
-        $dbh->query('DELETE FROM auta WHERE id ='.$id);
+        $dbh->query('DELETE FROM auta WHERE id =' . $id);
     }
 }

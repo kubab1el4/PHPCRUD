@@ -1,5 +1,6 @@
 <?php
 namespace App\Controllers;
+
 include_once "autoloader/autoloader.php";
 
 use App\Models\Auta;
@@ -23,6 +24,10 @@ class CarsController
         }
         return $dbh;
     }
+    public function stopConnection($dbh)
+    {
+        $dbh=null;
+    }
     public function readAll($dbh)
     {
         $data = [];
@@ -37,7 +42,7 @@ class CarsController
         $data = json_decode($json, true);
         echo "<ul class='lista list-group p-3 pagination flex-wrap'>";
         foreach ($data as $item) {
-            echo "<li class='rekord text-dark list-group-item d-flex justify-content-around gap-5 mb-2' id='".$item["id"]."'><div>ID: " .
+            echo "<li class='rekord text-dark list-group-item d-flex justify-content-around d-flex flex-wrap mb-2' id='" . $item["id"] . "'><div>ID: " .
                 $item["id"] .
                 "</div><div>Nazwa: " .
                 $item["nazwa"] .
