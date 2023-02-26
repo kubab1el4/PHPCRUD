@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 25 Lut 2023, 15:55
+-- Czas generowania: 26 Lut 2023, 23:08
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.2.0
 
@@ -37,6 +37,17 @@ CREATE TABLE `auta` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Zrzut danych tabeli `auta`
+--
+
+INSERT INTO `auta` (`id`, `nazwa`, `max_speed`, `silnik`, `masa`, `cena`) VALUES
+(63, 'Porsche_Panamera', 285, '3_6_litre_V6', '1814', '400000'),
+(64, 'Lexus_LS_350', 230, 'V6_Cylinder,_Hybrid,', '2186', '200000'),
+(65, 'Chevrolet_Camaro_ZL1', 318, '6_2_L_V-8', '1748', '300000'),
+(66, 'Dodge_Hellcat', 326, 'HEMI_V8', '2002', '474000'),
+(67, 'Volksvagen_ID__Buzz', 145, 'APP_310_permanent_ma', '3000', '200000');
+
+--
 -- Indeksy dla zrzutów tabel
 --
 
@@ -54,7 +65,7 @@ ALTER TABLE `auta`
 -- AUTO_INCREMENT dla tabeli `auta`
 --
 ALTER TABLE `auta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
