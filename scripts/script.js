@@ -77,6 +77,7 @@ $(document).ready(function() {
         $screen.load("display.php");
       },
     });
+    $('.text-reset').attr("id", "");
   });
   $addContainer.on("click", ".add", function() {
     {

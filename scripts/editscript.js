@@ -52,9 +52,9 @@ $(document).ready(function() {
     
         showNumberMessage("price");
       });
-      $("#editcars").off('submit');
-      $("#editcars").on("submit", function (e) {
-        $(".text-muted").html(
+      $editCars.off('submit');
+      $editCars.on("submit", function (e) {
+        $textMuted.html(
           "Kliknij na rekord aby zaznaczyć go do edycji"
         );
         function getFormData($form) {
@@ -67,19 +67,19 @@ $(document).ready(function() {
     
           return indexed_array;
         }
-        var formData = JSON.stringify(getFormData($("#editcars")));
-        var formData2 = JSON.stringify(parseInt($('.text-muted').attr('id')));
+        var formData = JSON.stringify(getFormData($editCars));
+        var formData2 = JSON.stringify(parseInt($textMuted.attr('id')));
         $.ajax({
           type: "POST",
           url: "edit-action.php",
           data: { formData, formData2 },
           success: function (data) {
-            console.log(data), $("#screen").load("display.php");
-            $(".add-container").html(
+            console.log(data), $screen.load("display.php");
+            $addContainer.html(
               "<p>Dodaj nowy samochód</p><button type='button' class='add btn btn-dark'>Dodaj</button>"
             );
-            $(".return").html("");
-            $(".edit-container").html(
+            $return.html("");
+            $editContainter.html(
               "<p>Edytuj zaznaczony samochód</p><button type='button' class='edit btn btn-primary'>Edytuj</button>"
             );
     
