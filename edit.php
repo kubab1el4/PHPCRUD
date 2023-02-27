@@ -15,8 +15,9 @@ $auto = json_decode($auto, true);
 $auto = $auto[0];
 $database->stopConnection($database->databaseConnect());
 ?>
-<script src="scripts/editscript.js" type="text/javascript" defer></script>
+
 <body class="d-flex flex-column min-vh-100">
+<script src="scripts/editscript.js" type="text/javascript" defer></script>
   <iframe name="votar" style="display:none;"></iframe>
   <form id='editcars' name='editcars' class="d-flex flex-column p-3" autocomplete="off" target="votar">
     <div class="form-group w-80 m-1">

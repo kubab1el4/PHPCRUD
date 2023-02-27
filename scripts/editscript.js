@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var $editCars = $("#carsedit");
+    var $editCars = $("#editcars");
     var $textMuted = $(".text-muted");
     var $screen = $("#screen");
     var $addContainer = $(".add-container");
