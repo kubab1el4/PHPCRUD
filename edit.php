@@ -1,19 +1,6 @@
 <?PHP
 declare(strict_types=1);
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <script src="script.js" type="text/javascript"></script>
-  <title>Show data</title>
-</head>
 <?PHP
 include_once 'autoloader/autoloader.php';
 use App\Controllers\CarsController;
@@ -26,8 +13,9 @@ $data = json_decode($json, true);
 $auto = $cars->read((int) $data['id'], $database->databaseConnect());
 $auto = json_decode($auto, true);
 $auto = $auto[0];
+$database->stopConnection($database->databaseConnect());
 ?>
-
+<script src="scripts/editscript.js" type="text/javascript" defer></script>
 <body class="d-flex flex-column min-vh-100">
   <iframe name="votar" style="display:none;"></iframe>
   <form id='editcars' name='editcars' class="d-flex flex-column p-3" autocomplete="off" target="votar">

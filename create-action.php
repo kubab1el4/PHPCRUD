@@ -8,3 +8,4 @@ $data = json_decode($json, true);
 $database = new CarsController;
 $car = new Auta;
 $car->create($data, $database->databaseConnect());
+$database->stopConnection($database->databaseConnect());

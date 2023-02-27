@@ -9,3 +9,4 @@ $dane = json_decode($json_dane, true);
 $database = new CarsController;
 $car = new Auta;
 $car->update($idSamochodu, $dane, $database->databaseConnect());
+$database->stopConnection($database->databaseConnect());
