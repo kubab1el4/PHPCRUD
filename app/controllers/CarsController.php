@@ -52,7 +52,7 @@ class CarsController
                 $item["silnik"] .
                 "</div><div>Masa: " .
                 $item["masa"] .
-                "</div><div>Cena: " .
+                "[KG]</div><div>Cena: " .
                 $item["cena"] .
                 "[PLN]</div><button type='button' id='" .
                 $item["id"] .
