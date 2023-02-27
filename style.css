@@ -19,3 +19,7 @@ small{
 .bg-secondary{
     background-color:rgb(168, 183, 196) !important;
 }
+.rekord > *{
+width:13%;
+word-wrap: break-word;
+}

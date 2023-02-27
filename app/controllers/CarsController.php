@@ -40,9 +40,9 @@ class CarsController
     public function buildItemList($json)
     {
         $data = json_decode($json, true);
-        echo "<ul class='lista list-group p-3 pagination flex-wrap'>";
+        echo "<ul class='lista list-group p-3 pagination'>";
         foreach ($data as $item) {
-            echo "<li class='rekord text-dark list-group-item d-flex justify-content-around d-flex flex-wrap mb-2' id='" . $item["id"] . "'><div>ID: " .
+            echo "<li class='rekord text-dark list-group-item d-flex align-items-center border border-dark justify-content-between d-flex flex-wrap mb-2' id='" . $item["id"] . "'><div>ID: " .
                 $item["id"] .
                 "</div><div>Nazwa: " .
                 $item["nazwa"] .
