@@ -81,6 +81,7 @@ $(document).ready(function() {
   });
   $addContainer.on("click", ".add", function() {
     {
+      $('.text-reset').attr("id", "");
       $screen.load("add.php");
       $return.html(
         "<p>Powrót do listy aut</p><button type='button' class='back btn btn-dark'>Powrót</button>"
