@@ -24,9 +24,9 @@ $(document).ready(function() {
   });
   $(window).on("load", function() {
     $.ajax({
-      url: "display.php",
+      url: "views/display.php",
       success: function(result) {
-        $screen.load("display.php");
+        $screen.load("views/display.php");
       },
     });
   });
@@ -35,7 +35,7 @@ $(document).ready(function() {
     if ($('.stopka').attr('id') != 0) {
       $.ajax({
         type: "POST",
-        url: "edit.php",
+        url: "views/edit.php",
         data: JSON.stringify({
           id: $('.stopka').attr('id')
         }),
@@ -69,12 +69,12 @@ $(document).ready(function() {
   $("#screen").on("click", ".delete", function() {
     $.ajax({
       type: "POST",
-      url: "delete-action.php",
+      url: "actions/delete-action.php",
       data: JSON.stringify({
         id: event.target.id
       }),
       success: function(data) {
-        $screen.load("display.php");
+        $screen.load("views/display.php");
       },
     });
     $('.text-reset').attr("id", "");
@@ -82,7 +82,7 @@ $(document).ready(function() {
   $addContainer.on("click", ".add", function() {
     {
       $('.text-reset').attr("id", "");
-      $screen.load("add.php");
+      $screen.load("views/add.php");
       $return.html(
         "<p>Powrót do listy aut</p><button type='button' class='back btn btn-dark'>Powrót</button>"
       );
@@ -98,7 +98,7 @@ $(document).ready(function() {
   $return.off("click");
   $return.on("click", ".back", function() {
     if(confirm("Jakiekolwiek zmiany/wpisane dane zostaną utracone, czy chcesz kontynuować?")){
-      $screen.load("display.php");
+      $screen.load("views/display.php");
       $return.html("");
       $editContainter.html(
         "<p>Edytuj zaznaczony samochód</p><button type='button' class='edit btn btn-primary'>Edytuj</button>"

@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 
-include_once "autoloader/autoloader.php";
+include_once "../autoloader/autoloader.php";
 
 use App\Models\Auta;
 use PDO;
@@ -10,7 +10,7 @@ class CarsController
 {
     public function databaseConnect()
     {
-        include_once "config/config.php";
+        include_once "../config/config.php";
         try {
             $dbh = new PDO(
                 "mysql:" . DB_HOST . "=localhost;dbname=" . DB_NAME . "",

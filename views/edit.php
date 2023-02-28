@@ -2,7 +2,7 @@
 declare(strict_types=1);
 ?>
 <?PHP
-include_once 'autoloader/autoloader.php';
+include_once '../autoloader/autoloader.php';
 use App\Controllers\CarsController;
 use App\Models\Auta;
 

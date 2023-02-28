@@ -1,7 +1,7 @@
 <?php
 namespace App\Models;
 
-include_once 'autoloader/autoloader.php';
+include_once '../autoloader/autoloader.php';
 
 class Auta
 {

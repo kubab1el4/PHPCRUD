@@ -71,10 +71,10 @@ $(document).ready(function() {
         var formData = JSON.stringify(getFormData($cars));
         $.ajax({
           type: "POST",
-          url: "create-action.php",
+          url: "actions/create-action.php",
           data: formData,
           success: function(data) {
-            $screen.load("display.php");
+            $screen.load("views/display.php");
             $addContainer.html(
               "<p>Dodaj nowy samochód</p><button type='button' class='add btn btn-dark'>Dodaj</button>"
             );
